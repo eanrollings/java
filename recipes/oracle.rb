@@ -21,6 +21,7 @@
 java_home = node['java']["java_home"]
 arch = node['java']['arch']
 jdk_version = node['java']['jdk_version']
+cmd_prefix = node['java']['install_cmd_prefix']
 
 #convert version number to a string if it isn't already
 if jdk_version.instance_of? Fixnum
@@ -50,6 +51,7 @@ java_ark "jdk" do
   app_home java_home
   bin_cmds bin_cmds
   alternatives_priority 1062
+  cmd_prefix cmd_prefix
   action :install
 end
 

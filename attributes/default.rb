@@ -26,6 +26,7 @@ default['java']['jdk_version'] = '6'
 default['java']['arch'] = kernel['machine'] =~ /x86_64/ ? "x86_64" : "i586"
 default['java']['openjdk_packages'] = []
 default['java']['accept_license_agreement'] = false
+default['java']['install_cmd_prefix'] = ''
 
 case node['platform_family']
 when "rhel", "fedora"
